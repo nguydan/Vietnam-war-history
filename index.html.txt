@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam War History</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Vietnam War History</h1>
+
+<!-- Language Toggle -->
+<div class="lang-toggle">
+  <button id="btn-en" class="active">English</button>
+  <button id="btn-vi">Tiếng Việt</button>
+</div>
+
+<!-- Timeline Container -->
+<div id="timeline"></div>
+
+<script src="toggle.js"></script>
+<script src="timeline.js"></script>
+</body>
+</html>
