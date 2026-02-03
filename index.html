@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vietnam War History</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vietnam War History</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="timeline.js" defer></script>
+  <script src="toggle.js" defer></script>
 </head>
 <body>
 
-<h1>Vietnam War History</h1>
+<header>
+  <h1>Vietnam War History</h1>
 
-<!-- Language Toggle -->
-<div class="lang-toggle">
-  <button id="btn-en" class="active">English</button>
-  <button id="btn-vi">Tiếng Việt</button>
-</div>
+  <div class="lang-switch">
+    <span>EN</span>
+    <label class="switch">
+      <input type="checkbox" id="langToggle">
+      <span class="slider"></span>
+    </label>
+    <span>VI</span>
+  </div>
+</header>
 
-<!-- Timeline Container -->
-<div id="timeline"></div>
+<main id="timeline"></main>
 
-<script src="toggle.js"></script>
-<script src="timeline.js"></script>
 </body>
 </html>
