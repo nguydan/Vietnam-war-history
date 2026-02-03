@@ -1,0 +1,38 @@
+[
+  {
+    "year": "1945",
+    "type": "political",
+    "en": "Ho Chi Minh declares independence from France.",
+    "vi": "Hồ Chí Minh tuyên bố độc lập từ Pháp."
+  },
+  {
+    "year": "1954",
+    "type": "battle",
+    "en": "Battle of Dien Bien Phu leads to French defeat.",
+    "vi": "Trận Điện Biên Phủ kết thúc với thất bại của Pháp."
+  },
+  {
+    "year": "1965",
+    "type": "us-escalation",
+    "en": "US deploys combat troops to Vietnam.",
+    "vi": "Mỹ triển khai lực lượng chiến đấu tới Việt Nam."
+  },
+  {
+    "year": "1966",
+    "type": "tech/weapons",
+    "en": "M48 Patton tanks and M113 APCs widely deployed.",
+    "vi": "Xe tăng M48 Patton và xe bọc thép M113 được triển khai rộng rãi."
+  },
+  {
+    "year": "1968",
+    "type": "battle",
+    "en": "Tet Offensive marks a turning point in the war.",
+    "vi": "Tổng tiến công Tết đánh dấu bước ngoặt của chiến tranh."
+  },
+  {
+    "year": "1975",
+    "type": "outcome",
+    "en": "Fall of Saigon ends the Vietnam War.",
+    "vi": "Sài Gòn thất thủ kết thúc Chiến tranh Việt Nam."
+  }
+]
