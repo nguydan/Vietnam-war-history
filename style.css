@@ -106,3 +106,12 @@ input:checked + .slider { background: #d32f2f; } /* Red for toggle active */
   h1 { font-size: 22px; }
   .event { padding: 12px; }
 }
+.event-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #eee; /* Shows a light gray box while loading */
+}
+
