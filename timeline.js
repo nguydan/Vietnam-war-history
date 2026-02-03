@@ -1,65 +1,48 @@
 const timeline = document.getElementById("timeline");
 let events = [];
 
-// 1. Wait for the page to be fully ready
-document.addEventListener("DOMContentLoaded", () => {
-  loadEvents();
-});
-
 async function loadEvents() {
   try {
-    // 2. The './' and the timestamp are key for Mobile Safari to find the file
-    // and ignore old, broken cached versions.
-    const url = `./events.json?v=${new Date().getTime()}`;
-    const response = await fetch(url);
+    // Show loading state
+    timeline.innerHTML = "<p style='text-align:center;'>Loading historical records...</p>";
     
-    if (!response.ok) {
-      throw new Error(`GitHub Status: ${response.status}`);
-    }
+    const response = await fetch("events.json");
+    if (!response.ok) throw new Error("Failed to load events.json");
     
     events = await response.json();
 
-    // Check localStorage for the language preference
     const savedLang = localStorage.getItem("lang") || 
                      (navigator.language.startsWith("vi") ? "vi" : "en");
 
     renderTimeline(savedLang);
-
   } catch (error) {
-    console.error("Timeline Error:", error);
-    timeline.innerHTML = `
-      <div style="color:red; text-align:center; padding:20px;">
-        <h3>⚠️ Mobile Load Error</h3>
-        <p>${error.message}</p>
-      </div>`;
+    timeline.innerHTML = "<p style='text-align:center; color:red;'>Error loading history data. Please check if events.json exists.</p>";
+    console.error(error);
   }
 }
 
-// This function can be called by toggle.js when the switch is flipped
 function renderTimeline(lang) {
   timeline.innerHTML = "";
 
-  if (events.length === 0) {
-    timeline.innerHTML = "<p style='text-align:center;'>No events found.</p>";
-    return;
-  }
-
   events.forEach(e => {
     const div = document.createElement("div");
-    // Ensure the type (battle, political, etc.) is added for CSS coloring
     div.className = `event ${e.type}`;
 
-    // IMPORTANT: The "event-image" class here must match your CSS
+    // Display image if available
     const imgHtml = e.image ? 
-      `<div class="event-image">
-         <img src="${e.image}" alt="${e[lang]}" loading="lazy">
-       </div>` : "";
+      `<img src="${e.image}" alt="${e.en}" style="width:100%; height:auto; border-radius:4px; margin-top:12px; border: 1px solid #ddd;">` : "";
 
     div.innerHTML = `
-      <h3>${e.year}</h3>
-      <p>${e[lang]}</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0;">${e.year}</h3>
+        <span style="font-size:12px; text-transform:uppercase; color:#666;">${e.type.replace('-', ' ')}</span>
+      </div>
+      <p style="margin-top:10px;">${e[lang]}</p>
       ${imgHtml}
     `;
     timeline.appendChild(div);
   });
 }
+
+// Start the process
+loadEvents();
