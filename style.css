@@ -1,105 +1,106 @@
-/* Basic reset */
-body, html {
+body {
   margin: 0;
-  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f9f9f9;
+  background: #f4f4f4;
   color: #222;
 }
 
-/* Header */
 header {
-  text-align: center;
-  padding: 15px 10px;
-  background-color: #003366;
+  background: #003366;
   color: white;
+  text-align: center;
+  padding: 16px;
 }
 
-header h1 {
+h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
 }
 
-.lang-toggle {
+/* Language toggle */
+.lang-switch {
   margin-top: 10px;
-}
-
-.lang-toggle button {
-  margin: 0 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  background-color: #ccc;
-  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   font-weight: bold;
 }
 
-.lang-toggle button.active {
-  background-color: #ff6600;
-  color: white;
+.switch {
+  position: relative;
+  width: 46px;
+  height: 24px;
 }
 
-/* Timeline container */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 24px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: #ff6600;
+}
+
+input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+/* Timeline */
 #timeline {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 20px;
   max-width: 900px;
   margin: auto;
-  overflow-x: hidden;
+  padding: 15px;
 }
 
-/* Event box */
 .event {
-  border-left: 4px solid #888;
-  background-color: #fff;
-  margin: 10px 0;
-  padding: 10px 15px;
-  border-radius: 5px;
+  background: white;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 6px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border-left: 5px solid #888;
 }
 
-/* Color coding for event types */
+.event h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.event p {
+  margin: 6px 0 0;
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+/* Color coding */
 .event.political { border-left-color: #2a7ae2; }
 .event.battle { border-left-color: #d32f2f; }
 .event.us-escalation { border-left-color: #fbc02d; }
-.event.tech\\/weapons { border-left-color: #388e3c; }
+.event.tech-weapons { border-left-color: #388e3c; }
 .event.outcome { border-left-color: #7b1fa2; }
 
-/* Year */
-.event h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-/* Event description */
-.event p {
-  margin: 5px 0 0 0;
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-/* Additional details */
-.event p.details {
-  font-size: 13px;
-  color: #555;
-  margin-top: 3px;
-  padding-left: 10px;
-  border-left: 2px solid #ccc;
-}
-
-/* Mobile-friendly scrolling */
 @media (max-width: 600px) {
-  #timeline {
-    padding: 10px;
-  }
-
-  .event h3 {
-    font-size: 16px;
-  }
-
-  .event p {
-    font-size: 14px;
-  }
+  h1 { font-size: 20px; }
 }
