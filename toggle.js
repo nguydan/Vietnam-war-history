@@ -1,16 +1,17 @@
-const btnEn = document.getElementById("btn-en");
-const btnVi = document.getElementById("btn-vi");
+const toggle = document.getElementById("langToggle");
 
-btnEn.addEventListener("click", () => {
-  renderTimeline("en");
-  btnEn.classList.add("active");
-  btnVi.classList.remove("active");
-  localStorage.setItem("lang", "en");
-});
+function setLanguage(lang) {
+  localStorage.setItem("lang", lang);
+  renderTimeline(lang);
+  toggle.checked = lang === "vi";
+}
 
-btnVi.addEventListener("click", () => {
-  renderTimeline("vi");
-  btnVi.classList.add("active");
-  btnEn.classList.remove("active");
-  localStorage.setItem("lang", "vi");
+const savedLang =
+  localStorage.getItem("lang") ||
+  (navigator.language.startsWith("vi") ? "vi" : "en");
+
+setLanguage(savedLang);
+
+toggle.addEventListener("change", () => {
+  setLanguage(toggle.checked ? "vi" : "en");
 });
