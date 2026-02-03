@@ -69,4 +69,30 @@
     "year": "1968",
     "type": "tech-weapons",
     "en": "M16 rifle fully replaces earlier US infantry weapons.",
-    "v
+    "vi": "Súng M16 hoàn toàn thay thế các vũ khí bộ binh Mỹ trước đó."
+  },
+  {
+    "year": "1969",
+    "type": "tech-weapons",
+    "en": "PT-76 light tanks used by North Vietnamese forces during offensives.",
+    "vi": "Xe tăng hạng nhẹ PT-76 được quân đội Bắc Việt sử dụng trong các cuộc tấn công."
+  },
+  {
+    "year": "1972",
+    "type": "tech-weapons",
+    "en": "T-54 tanks spearhead North Vietnamese Easter Offensive.",
+    "vi": "Xe tăng T-54 dẫn đầu Tổng tấn công Mùa Phục Sinh của Bắc Việt."
+  },
+  {
+    "year": "1973",
+    "type": "political",
+    "en": "Paris Peace Accords signed; US forces withdraw.",
+    "vi": "Hiệp định Paris được ký; quân Mỹ rút khỏi Việt Nam."
+  },
+  {
+    "year": "1975",
+    "type": "outcome",
+    "en": "Fall of Saigon ends the Vietnam War.",
+    "vi": "Sài Gòn thất thủ, chiến tranh Việt Nam kết thúc."
+  }
+]
