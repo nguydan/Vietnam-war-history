@@ -2,37 +2,55 @@
   {
     "year": "1945",
     "type": "political",
-    "en": "Ho Chi Minh declares independence from France.",
-    "vi": "Hồ Chí Minh tuyên bố độc lập từ Pháp."
+    "en": "Ho Chi Minh declares Vietnam’s independence.",
+    "vi": "Hồ Chí Minh tuyên bố độc lập của Việt Nam."
   },
   {
     "year": "1954",
     "type": "battle",
-    "en": "Battle of Dien Bien Phu leads to French defeat.",
-    "vi": "Trận Điện Biên Phủ kết thúc với thất bại của Pháp."
+    "en": "Battle of Dien Bien Phu defeats French forces.",
+    "vi": "Trận Điện Biên Phủ đánh bại quân đội Pháp."
+  },
+  {
+    "year": "1954",
+    "type": "political",
+    "en": "Geneva Accords divide Vietnam at the 17th parallel.",
+    "vi": "Hiệp định Genève chia Việt Nam tại vĩ tuyến 17."
+  },
+  {
+    "year": "1964",
+    "type": "us-escalation",
+    "en": "Gulf of Tonkin incident escalates US involvement.",
+    "vi": "Sự kiện Vịnh Bắc Bộ khiến Mỹ leo thang tham chiến."
   },
   {
     "year": "1965",
     "type": "us-escalation",
-    "en": "US deploys combat troops to Vietnam.",
-    "vi": "Mỹ triển khai lực lượng chiến đấu tới Việt Nam."
+    "en": "US combat troops arrive in Vietnam.",
+    "vi": "Quân chiến đấu Mỹ đổ bộ vào Việt Nam."
   },
   {
     "year": "1966",
-    "type": "tech/weapons",
-    "en": "M48 Patton tanks and M113 APCs widely deployed.",
-    "vi": "Xe tăng M48 Patton và xe bọc thép M113 được triển khai rộng rãi."
+    "type": "tech-weapons",
+    "en": "M48 Patton tanks, M113 APCs, and Huey helicopters widely used.",
+    "vi": "Xe tăng M48 Patton, M113 và trực thăng Huey được sử dụng rộng rãi."
   },
   {
     "year": "1968",
     "type": "battle",
-    "en": "Tet Offensive marks a turning point in the war.",
-    "vi": "Tổng tiến công Tết đánh dấu bước ngoặt của chiến tranh."
+    "en": "Tet Offensive becomes a turning point in the war.",
+    "vi": "Tổng tiến công Tết trở thành bước ngoặt của chiến tranh."
+  },
+  {
+    "year": "1973",
+    "type": "political",
+    "en": "Paris Peace Accords signed; US forces withdraw.",
+    "vi": "Hiệp định Paris được ký; quân Mỹ rút khỏi Việt Nam."
   },
   {
     "year": "1975",
     "type": "outcome",
     "en": "Fall of Saigon ends the Vietnam War.",
-    "vi": "Sài Gòn thất thủ kết thúc Chiến tranh Việt Nam."
+    "vi": "Sài Gòn thất thủ, chiến tranh Việt Nam kết thúc."
   }
 ]
