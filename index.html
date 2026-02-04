@@ -21,21 +21,25 @@
 </header>
 
 <nav id="navbar">
-  <a href="#about" class="nav-link" data-en="About" data-vi="Giới Thiệu">About</a>
-  <a href="#timeline-section" class="nav-link" data-en="Timeline" data-vi="Dòng Thời Gian">Timeline</a>
-  <a href="#resources" class="nav-link" data-en="Resources" data-vi="Tài Liệu">Resources</a>
+  <a href="#about" class="nav-link" id="nav-about">About</a>
+  <a href="#timeline-section" class="nav-link" id="nav-timeline">Timeline</a>
 </nav>
 
 <section id="about">
-  <h2 id="about-title">Preserving Our History</h2>
-  <p id="about-text">This project serves as a digital archive dedicated to the history of the Republic of Vietnam, focusing on the courage of the ARVN and the complexity of the conflict.</p>
+  <div class="container">
+    <h2 id="about-title">Preserving the Legacy</h2>
+    <p id="about-text">
+      This archive is dedicated to documenting the history of the Vietnam War, with a special focus on the Republic of Vietnam (South Vietnam). 
+      Our mission is to preserve the stories of the ARVN soldiers and the civilian experience for future generations.
+    </p>
+  </div>
 </section>
 
 <div id="filter-container">
-  <button class="filter-btn active" data-type="all">All</button>
-  <button class="filter-btn" data-type="battle">Battles</button>
-  <button class="filter-btn" data-type="political">Politics</button>
-  <button class="filter-btn" data-type="tech-weapons">Technology</button>
+  <button class="filter-btn active" data-type="all" id="btn-all">All</button>
+  <button class="filter-btn" data-type="battle" id="btn-battles">Battles</button>
+  <button class="filter-btn" data-type="political" id="btn-politics">Politics</button>
+  <button class="filter-btn" data-type="tech-weapons" id="btn-tech">Technology</button>
 </div>
 
 <main id="timeline">
