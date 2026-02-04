@@ -1,47 +1,66 @@
 const timeline = document.getElementById("timeline");
-let events = []; // Global variable so the toggle can access data
+let allEvents = []; // Our "Master List" (the bag of beads)
+let currentFilter = "all"; // Tracks what shape we want
+let currentLang = localStorage.getItem("lang") || "en"; // Tracks what color we want
 
-// 1. Fetch the data once
+// 1. Fetch the data
 async function loadEvents() {
   try {
     const response = await fetch("events.json");
-    if (!response.ok) throw new Error("Failed to load events.json");
-    
-    events = await response.json();
-
-    // Check what language is currently active in your toggle
-    const savedLang = localStorage.getItem("lang") || "en";
-    renderTimeline(savedLang);
-    
+    allEvents = await response.json();
+    renderTimeline(); // Draw the page for the first time
   } catch (error) {
-    console.error("Error loading events:", error);
-    timeline.innerHTML = `<p style="color:red; text-align:center;">Error loading timeline: ${error.message}</p>`;
+    console.error("Data failed to load:", error);
   }
 }
 
-// 2. The function that the Toggle Switch calls
-// This rebuilds the cards instantly when you flip the switch
-function renderTimeline(lang) {
-  timeline.innerHTML = "";
+// 2. The Filter Logic
+// This function "cleans" the list before we show it
+function renderTimeline() {
+  timeline.innerHTML = ""; // Clear the screen first
 
-  events.forEach(e => {
+  // THE MAGIC LINE: .filter() creates a new list based on our rule
+  const filteredEvents = allEvents.filter(event => {
+    if (currentFilter === "all") return true; // Keep everything
+    return event.type === currentFilter; // Only keep if it matches
+  });
+
+  // Now we take our filtered list and draw the cards
+  filteredEvents.forEach(e => {
     const div = document.createElement("div");
     div.className = `event ${e.type}`;
+    const imgHtml = e.image ? `<img src="${e.image}" alt="History Image">` : "";
 
-    // Only create the image HTML if the image exists in the JSON
-    const imgHtml = e.image ? 
-      `<img src="${e.image}" alt="${e.en}" style="width:100%; height:auto; border-radius:4px; margin-top:15px; border: 1px solid #ddd;">` 
-      : "";
-
-    // Pick the correct language text based on 'lang' (en or vi)
     div.innerHTML = `
       <h3>${e.year}</h3>
-      <p style="font-size: 1.1rem; color: #444;">${e[lang]}</p>
+      <p>${e[currentLang]}</p> 
       ${imgHtml}
     `;
     timeline.appendChild(div);
   });
 }
 
-// Start the process
+// 3. The Button Listeners
+// We find all buttons in the filter-container
+document.querySelectorAll(".filter-btn").forEach(button => {
+  button.addEventListener("click", (e) => {
+    // 1. Remove "active" look from all buttons
+    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+    // 2. Add "active" look to the one we clicked
+    e.target.classList.add("active");
+
+    // 3. Change our current filter to the "sticky note" value
+    currentFilter = e.target.getAttribute("data-type");
+
+    // 4. Redraw the timeline!
+    renderTimeline();
+  });
+});
+
+// This makes the toggle switch work with this new script
+window.renderTimeline = (lang) => {
+  currentLang = lang;
+  renderTimeline();
+};
+
 loadEvents();
