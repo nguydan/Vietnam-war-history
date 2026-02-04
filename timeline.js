@@ -3,6 +3,13 @@ let allEvents = [];
 let currentFilter = "all"; 
 let currentLang = localStorage.getItem("lang") || "en"; 
 
+// THE BRIDGE: We define this early so toggle.js can find it immediately
+window.renderTimeline = (lang) => {
+  console.log("Timeline script received language change to:", lang);
+  currentLang = lang; 
+  renderTimeline(); 
+};
+
 async function loadEvents() {
   try {
     const response = await fetch("events.json");
@@ -12,6 +19,7 @@ async function loadEvents() {
     console.error("Data failed to load:", error);
   }
 }
+
 
 // This is the core function that draws everything
 function renderTimeline() {
