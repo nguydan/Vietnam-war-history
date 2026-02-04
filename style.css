@@ -116,3 +116,54 @@ header {
   header h1 { font-size: 1.5rem; }
   .event { margin: 10px; }
 }
+
+/* Navigation Bar */
+#navbar {
+  background: #3a4119; /* Slightly darker olive */
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-link {
+  color: #f4ecd8;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+/* Filter Buttons */
+#filter-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.filter-btn {
+  background: #f4ecd8;
+  border: 2px solid #4b5320;
+  color: #4b5320;
+  padding: 8px 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: #4b5320;
+  color: #f4ecd8;
+}
+
+/* About Section */
+#about {
+  background: #fff;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
