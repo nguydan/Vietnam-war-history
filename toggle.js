@@ -1,9 +1,28 @@
 const toggle = document.getElementById("langToggle");
 
 const uiTranslations = {
-  en: { title: "Vietnam War History", introTitle: "A Journey Through Time", introText: "Explore the complex history..." },
-  vi: { title: "Lịch Sử Chiến Tranh Việt Nam", introTitle: "Hành Trình Qua Thời Gian", introText: "Khám phá lịch sử phức tạp..." }
+  en: { 
+    title: "Vietnam War History", 
+    aboutTitle: "Preserving Our History",
+    aboutText: "This project serves as a digital archive dedicated to the history of the Republic of Vietnam...",
+    navAbout: "About",
+    navTimeline: "Timeline",
+    navResources: "Resources"
+  },
+  vi: { 
+    title: "Lịch Sử Chiến Tranh Việt Nam", 
+    aboutTitle: "Gìn Giữ Lịch Sử",
+    aboutText: "Dự án này đóng vai trò như một kho lưu trữ kỹ thuật số dành riêng cho lịch sử Việt Nam Cộng Hòa...",
+    navAbout: "Giới Thiệu",
+    navTimeline: "Dòng Thời Gian",
+    navResources: "Tài Liệu"
+  }
 };
+
+// Inside your setLanguage(lang) function, add these:
+document.getElementById("about-title").textContent = uiTranslations[lang].aboutTitle;
+document.getElementById("about-text").textContent = uiTranslations[lang].aboutText;
+// ...and update the nav links...
 
 function setLanguage(lang) {
   console.log("Setting language to:", lang); // Check your Inspect Console for this
