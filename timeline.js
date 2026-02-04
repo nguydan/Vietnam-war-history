@@ -49,18 +49,12 @@ document.querySelectorAll(".filter-btn").forEach(button => {
   });
 });
 
-// THIS IS THE KEY: This function is what toggle.js calls
+ // EXPORT the function to the window so toggle.js can see it
 window.renderTimeline = (lang) => {
-  currentLang = lang; // Update the global language variable
-  renderTimeline();   // Redraw the timeline with the new language
+  console.log("Timeline.js received language change to:", lang);
+  currentLang = lang; // Updates the 'state' variable used in the loop
+  renderTimeline();   // Runs the drawing logic above
 };
 
+// Start the app
 loadEvents();
-
-// This "attaches" the function to the browser window 
-// so toggle.js can find it easily.
-window.renderTimeline = (lang) => {
-  currentLang = lang; // Update our "Global" language setting
-  renderTimeline();   // Run the logic to redraw the cards
-};
-
