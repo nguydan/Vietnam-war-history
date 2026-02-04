@@ -103,7 +103,7 @@ header {
 
 /* Logic for the Toggle Movement */
 #langToggle:checked + .slider {
-  background-color: #8b0000; /* Deep Red for VI state */
+  background-color: #4b5320 !important; /* Changes the red back to Military Green */
 }
 
 #langToggle:checked + .slider:before {
