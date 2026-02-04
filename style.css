@@ -1,4 +1,74 @@
-/* The Switch Container */
+/* --- Global Styles --- */
+body {
+  background-color: #f4ecd8; /* Parchment/Historical Paper Color */
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif; /* Classic historical font */
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #4b5320; /* Olive Drab Military Green */
+  color: #f4ecd8;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+#intro {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* --- Timeline Container --- */
+#timeline {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  padding: 20px;
+}
+
+/* --- Individual Event Cards --- */
+.event {
+  background: #ffffff;
+  border-left: 8px solid #4b5320;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.event:hover {
+  transform: scale(1.02);
+}
+
+.event h3 {
+  margin-top: 0;
+  color: #4b5320;
+  font-size: 1.5rem;
+}
+
+.event img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+}
+
+/* --- The Language Toggle --- */
+.switch-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -6,19 +76,17 @@
   height: 34px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The Slider */
 .slider {
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
+  background-color: #999;
   transition: .4s;
   border-radius: 34px;
 }
@@ -33,20 +101,18 @@
   border-radius: 50%;
 }
 
-/* 1. Use the ID for maximum priority */
+/* Logic for the Toggle Movement */
 #langToggle:checked + .slider {
-  background-color: #4b5320 !important; /* Forces the green color */
+  background-color: #8b0000; /* Deep Red for VI state */
 }
 
-/* 2. Add Webkit for Mac/Safari support */
 #langToggle:checked + .slider:before {
-  -webkit-transform: translateX(26px) !important; /* For Safari/Mac */
-  -ms-transform: translateX(26px) !important;      /* For IE */
-  transform: translateX(26px) !important;         /* Standard */
+  -webkit-transform: translateX(26px) !important;
+  transform: translateX(26px) !important;
 }
 
-/* 3. Ensure the slider is actually visible and clickable */
-.switch {
-  cursor: pointer;
-  z-index: 10;
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  .event { margin: 10px; }
 }
