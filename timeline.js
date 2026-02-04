@@ -1,35 +1,34 @@
 const timeline = document.getElementById("timeline");
-let allEvents = []; // Our "Master List" (the bag of beads)
-let currentFilter = "all"; // Tracks what shape we want
-let currentLang = localStorage.getItem("lang") || "en"; // Tracks what color we want
+let allEvents = []; 
+let currentFilter = "all"; 
+let currentLang = localStorage.getItem("lang") || "en"; 
 
-// 1. Fetch the data
 async function loadEvents() {
   try {
     const response = await fetch("events.json");
     allEvents = await response.json();
-    renderTimeline(); // Draw the page for the first time
+    renderTimeline(); 
   } catch (error) {
     console.error("Data failed to load:", error);
   }
 }
 
-// 2. The Filter Logic
-// This function "cleans" the list before we show it
+// This is the core function that draws everything
 function renderTimeline() {
-  timeline.innerHTML = ""; // Clear the screen first
+  if (!timeline) return;
+  timeline.innerHTML = ""; 
 
-  // THE MAGIC LINE: .filter() creates a new list based on our rule
+  // 1. Filter the list by Type
   const filteredEvents = allEvents.filter(event => {
-    if (currentFilter === "all") return true; // Keep everything
-    return event.type === currentFilter; // Only keep if it matches
+    if (currentFilter === "all") return true;
+    return event.type === currentFilter;
   });
 
-  // Now we take our filtered list and draw the cards
+  // 2. Draw the cards using the currentLang variable
   filteredEvents.forEach(e => {
     const div = document.createElement("div");
     div.className = `event ${e.type}`;
-    const imgHtml = e.image ? `<img src="${e.image}" alt="History Image">` : "";
+    const imgHtml = e.image ? `<img src="${e.image}" alt="History Image" style="width:100%; border-radius:4px; margin-top:10px;">` : "";
 
     div.innerHTML = `
       <h3>${e.year}</h3>
@@ -40,27 +39,20 @@ function renderTimeline() {
   });
 }
 
-// 3. The Button Listeners
-// We find all buttons in the filter-container
+// Listen for Filter Button clicks
 document.querySelectorAll(".filter-btn").forEach(button => {
   button.addEventListener("click", (e) => {
-    // 1. Remove "active" look from all buttons
     document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-    // 2. Add "active" look to the one we clicked
     e.target.classList.add("active");
-
-    // 3. Change our current filter to the "sticky note" value
     currentFilter = e.target.getAttribute("data-type");
-
-    // 4. Redraw the timeline!
     renderTimeline();
   });
 });
 
-// This makes the toggle switch work with this new script
+// THIS IS THE KEY: This function is what toggle.js calls
 window.renderTimeline = (lang) => {
-  currentLang = lang;
-  renderTimeline();
+  currentLang = lang; // Update the global language variable
+  renderTimeline();   // Redraw the timeline with the new language
 };
 
 loadEvents();
