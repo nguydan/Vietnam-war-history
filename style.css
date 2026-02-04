@@ -33,11 +33,20 @@
   border-radius: 50%;
 }
 
-/* THE FIX: Force the move */
-input:checked + .slider {
-  background-color: #4b5320; /* Olive Drab */
+/* 1. Use the ID for maximum priority */
+#langToggle:checked + .slider {
+  background-color: #4b5320 !important; /* Forces the green color */
 }
 
-input:checked + .slider:before {
-  transform: translateX(26px) !important;
+/* 2. Add Webkit for Mac/Safari support */
+#langToggle:checked + .slider:before {
+  -webkit-transform: translateX(26px) !important; /* For Safari/Mac */
+  -ms-transform: translateX(26px) !important;      /* For IE */
+  transform: translateX(26px) !important;         /* Standard */
+}
+
+/* 3. Ensure the slider is actually visible and clickable */
+.switch {
+  cursor: pointer;
+  z-index: 10;
 }
