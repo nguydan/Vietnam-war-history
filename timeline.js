@@ -56,3 +56,11 @@ window.renderTimeline = (lang) => {
 };
 
 loadEvents();
+
+// This "attaches" the function to the browser window 
+// so toggle.js can find it easily.
+window.renderTimeline = (lang) => {
+  currentLang = lang; // Update our "Global" language setting
+  renderTimeline();   // Run the logic to redraw the cards
+};
+
