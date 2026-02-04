@@ -39,22 +39,26 @@ function renderTimeline() {
   });
 }
 
-// Listen for Filter Button clicks
+// 1. Listen for Filter Button clicks (KEEP THIS)
 document.querySelectorAll(".filter-btn").forEach(button => {
   button.addEventListener("click", (e) => {
+    // Visual update for buttons
     document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
     e.target.classList.add("active");
+    
+    // Logic update
     currentFilter = e.target.getAttribute("data-type");
-    renderTimeline();
+    renderTimeline(); // Redraws the list with the new filter
   });
 });
 
- // EXPORT the function to the window so toggle.js can see it
+// 2. The Bridge for toggle.js (KEEP AND FIX THIS)
 window.renderTimeline = (lang) => {
-  console.log("Timeline.js received language change to:", lang);
-  currentLang = lang; // Updates the 'state' variable used in the loop
-  renderTimeline();   // Runs the drawing logic above
+  console.log("Timeline script received language change to:", lang);
+  currentLang = lang; // This is the crucial update
+  renderTimeline();   // This forces the cards to redraw in the new language
 };
 
-// Start the app
+// 3. Start the app
 loadEvents();
+
