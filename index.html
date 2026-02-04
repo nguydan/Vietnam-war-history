@@ -10,8 +10,7 @@
 
 <header>
   <h1>Vietnam War History</h1>
-
-  <div class="lang-switch">
+  <div class="switch-container">
     <span>EN</span>
     <label class="switch">
       <input type="checkbox" id="langToggle">
@@ -21,17 +20,26 @@
   </div>
 </header>
 
-<section id="intro" style="text-align: center; padding: 20px;">
-  <h2 id="intro-title">A Journey Through Time</h2>
-  <p id="intro-text">
-    Explore the complex history, pivotal battles, and the human stories 
-    of the Vietnam War through this interactive timeline.
-  </p>
+<nav id="navbar">
+  <a href="#about" class="nav-link" data-en="About" data-vi="Giới Thiệu">About</a>
+  <a href="#timeline-section" class="nav-link" data-en="Timeline" data-vi="Dòng Thời Gian">Timeline</a>
+  <a href="#resources" class="nav-link" data-en="Resources" data-vi="Tài Liệu">Resources</a>
+</nav>
+
+<section id="about">
+  <h2 id="about-title">Preserving Our History</h2>
+  <p id="about-text">This project serves as a digital archive dedicated to the history of the Republic of Vietnam, focusing on the courage of the ARVN and the complexity of the conflict.</p>
 </section>
 
+<div id="filter-container">
+  <button class="filter-btn active" data-type="all">All</button>
+  <button class="filter-btn" data-type="battle">Battles</button>
+  <button class="filter-btn" data-type="political">Politics</button>
+  <button class="filter-btn" data-type="tech-weapons">Technology</button>
+</div>
+
 <main id="timeline">
-  <p style="text-align:center;">Loading history...</p>
-</main>
+  </main>
 
 <script src="timeline.js"></script>
 <script src="toggle.js"></script>
