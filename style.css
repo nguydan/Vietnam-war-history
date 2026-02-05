@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* --- Global Styles --- */
 body {
   background-color: #f4ecd8; /* Parchment/Historical Paper Color */
@@ -174,3 +178,5 @@ header {
   gap: 15px;
   flex-wrap: wrap; /* This lets buttons move to a second line if the screen is too narrow */
 }
+
+
