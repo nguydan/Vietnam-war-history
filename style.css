@@ -2,6 +2,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* This prevents the sticky navbar from covering your titles when you jump */
+section, main {
+  scroll-margin-top: 80px; 
+}
+
 /* --- Global Styles --- */
 body {
   background-color: #f4ecd8; /* Parchment/Historical Paper Color */
