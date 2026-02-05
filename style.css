@@ -34,6 +34,11 @@ header {
   padding: 20px;
 }
 
+#timeline {
+  padding-top: 20px;
+  min-height: 400px; /* This ensures there's a "bucket" ready for the cards */
+}
+
 /* --- Individual Event Cards --- */
 .event {
   background: #ffffff;
@@ -178,5 +183,6 @@ header {
   gap: 15px;
   flex-wrap: wrap; /* This lets buttons move to a second line if the screen is too narrow */
 }
+
 
 
