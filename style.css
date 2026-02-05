@@ -167,3 +167,10 @@ header {
   text-align: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* This lets buttons move to a second line if the screen is too narrow */
+}
