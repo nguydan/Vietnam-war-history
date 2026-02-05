@@ -32,9 +32,6 @@ header {
   max-width: 800px;
   margin: 0 auto 50px auto;
   padding: 20px;
-}
-
-#timeline {
   padding-top: 20px;
   min-height: 400px; /* This ensures there's a "bucket" ready for the cards */
 }
