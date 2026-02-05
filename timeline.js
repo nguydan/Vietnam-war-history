@@ -31,6 +31,12 @@ function renderTimeline() {
   if (!timeline) return;
   timeline.innerHTML = ""; 
 
+  // Check if we actually have data before trying to loop
+  if (!allEvents || allEvents.length === 0) {
+    timeline.innerHTML = "<p>Loading events...</p>";
+    return;
+  }
+
   const filteredEvents = allEvents.filter(event => {
     if (currentFilter === "all") return true;
     return event.type === currentFilter;
@@ -40,18 +46,21 @@ function renderTimeline() {
     const div = document.createElement("div");
     div.className = `event ${e.type}`;
     
-    // Check if the image exists, otherwise leave blank
     const imgHtml = e.image ? `<img src="${e.image}" alt="History Image" style="width:100%; border-radius:4px; margin-top:10px;">` : "";
 
-    // DYNAMIC LANGUAGE LOOKUP: e[currentLang]
+    // IMPORTANT: Check if the language key exists in your JSON
+    // If e[currentLang] is missing, it will show an empty card
+    const description = e[currentLang] || e.en || "No description available";
+
     div.innerHTML = `
       <h3>${e.year}</h3>
-      <p>${e[currentLang]}</p> 
+      <p>${description}</p> 
       ${imgHtml}
     `;
     timeline.appendChild(div);
   });
 }
+
 
 // Button Listeners
 document.querySelectorAll(".filter-btn").forEach(button => {
