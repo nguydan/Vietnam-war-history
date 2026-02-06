@@ -1,60 +1,73 @@
-const timeline = document.getElementById("timeline");
-let allEvents = []; 
-let currentFilter = "all"; 
-let currentLang = localStorage.getItem("lang") || "en"; 
+document.addEventListener("DOMContentLoaded", () => {
+  const timeline = document.getElementById("timeline");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  let allEvents = [];
+  let currentLang = document.getElementById("langToggle").checked ? "vi" : "en";
 
-// 1. THE BRIDGE (Must be at the top)
-window.renderTimeline = (lang) => {
-  currentLang = lang; 
-  renderTimeline(); 
-};
+  // Fetch the events from your JSON file
+  fetch("events.json")
+    .then(response => response.json())
+    .then(data => {
+      allEvents = data;
+      renderTimeline(allEvents);
+    });
 
-// 2. THE DRAWING ENGINE
-function renderTimeline() {
-  if (!timeline) return;
-  timeline.innerHTML = ""; 
+  // Function to build the timeline HTML
+  function renderTimeline(events) {
+    timeline.innerHTML = "";
+    events.forEach(event => {
+      const eventCard = document.createElement("div");
+      eventCard.className = `event-card ${event.type}`;
+      
+      // Determine content based on current language
+      const title = event[currentLang] || event.en;
+      const year = event.year || event.date.split("-")[0];
+      
+      let html = `
+        <div class="event-date">${year}</div>
+        <div class="event-content">
+          <p>${title}</p>
+      `;
 
-  // If the list is empty, put the 1955 test card in manually
-  const dataToUse = (allEvents.length === 0) ? [{
-    year: "1955",
-    type: "political",
-    en: "The Republic of Vietnam is established.",
-    vi: "Việt Nam Cộng Hòa được thành lập.",
-    image: ""
-  }] : allEvents;
+      // Check if there is an image
+      if (event.image) {
+        html += `<img src="${event.image}" alt="event image" style="width:100%; border-radius:8px; margin-top:10px;">`;
+      }
 
-  const filtered = dataToUse.filter(e => currentFilter === "all" || e.type === currentFilter);
+      // NEW: Check if there is a link for the "Read More" button
+      if (event.link) {
+        html += `
+          <div style="margin-top: 15px;">
+            <a href="${event.link}" class="read-more-btn">Read Full Report / Xem Chi Tiết</a>
+          </div>
+        `;
+      }
 
-  filtered.forEach(e => {
-    const div = document.createElement("div");
-    div.className = `event ${e.type}`;
-    const text = e[currentLang] || e.en || "Missing text";
-    div.innerHTML = `<h3>${e.year}</h3><p>${text}</p>`;
-    timeline.appendChild(div);
-  });
-}
-
-// 3. THE DATA LOADER
-async function loadEvents() {
-  try {
-    const response = await fetch("events.json");
-    if (response.ok) {
-      allEvents = await response.json();
-      renderTimeline();
-    }
-  } catch (err) {
-    console.error("JSON load failed, sticking with test card.");
+      html += `</div>`;
+      eventCard.innerHTML = html;
+      timeline.appendChild(eventCard);
+    });
   }
-}
 
-// 4. FILTER LISTENERS
-document.querySelectorAll(".filter-btn").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    currentFilter = e.target.getAttribute("data-type");
-    renderTimeline();
+  // Language Toggle Logic
+  document.getElementById("langToggle").addEventListener("change", (e) => {
+    currentLang = e.target.checked ? "vi" : "en";
+    renderTimeline(allEvents);
+  });
+
+  // Filtering Logic
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const type = btn.getAttribute("data-type");
+      
+      if (type === "all") {
+        renderTimeline(allEvents);
+      } else {
+        const filtered = allEvents.filter(e => e.type === type);
+        renderTimeline(filtered);
+      }
+    });
   });
 });
-
-// Run immediately
-renderTimeline(); 
-loadEvents();
