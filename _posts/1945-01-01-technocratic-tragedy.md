@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Technocratic Tragedy: Strategy & Limits of Power"
+title: "Strategic Overview: The Technocratic Tragedy"
 date: 1945-01-01
 categories: analysis
 ---
