@@ -1,10 +1,11 @@
 [
   {
-    "year": "1945",
-    "type": "analysis",
-    "en": "REPORT: The Technocratic Tragedy - Analysis of War Strategy.",
-    "vi": "BÁO CÁO: Bi kịch Kỹ trị - Phân tích Chiến lược Chiến tranh.",
-    "link": "/_posts/1945-01-01-technocratic-tragedy.html"
+  "year": "1945",
+  "type": "analysis",
+  "en": "REPORT: The Technocratic Tragedy.",
+  "vi": "BÁO CÁO: Bi kịch Kỹ trị.",
+  "link": "/_posts/1945-01-01-technocratic-tragedy.html",
+  "video": "https://www.youtube.com/embed/dQw4w9WgXcQ" 
   },
 
   {
