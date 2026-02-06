@@ -203,4 +203,20 @@ header {
   color: #fff;
 }
 
+.read-more-btn {
+  display: inline-block;
+  background-color: #ffd700; /* Gold like the RVN flag */
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: background 0.3s;
+}
+
+.read-more-btn:hover {
+  background-color: #ccac00;
+  color: #fff;
+}
 
