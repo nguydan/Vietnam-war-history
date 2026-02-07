@@ -24,18 +24,14 @@ The roots of American involvement in Vietnam and the specific policy flaws of th
 
 
 <h2 id="mcnamara">3. The McNamara Paradigm</h2>
-The effectiveness of the combatants in Vietnam was defined by their organizational structure and tactical roles.
-• ARVN (Republic of Vietnam): Faced the immense challenge of transitioning from a colonial auxiliary to a modern national army while simultaneously fighting an insurgency.
-• NVA/VC: Leveraged asymmetrical warfare, utilizing the terrain and a "protracted war" strategy to negate the technological advantages of allied forces.
-
+Robert S. McNamara’s tenure as Secretary of Defense (1961–1968) marked the apex of the technocratic approach to warfare. Coming from a background in corporate management, McNamara believed that military success could be measured through "systems analysis" and statistical data. This led to a reliance on metrics like "body counts" and "sorties flown," which often masked the lack of actual political progress on the ground.
 
 <h2 id="combatants">4. Comparative Analysis of Combatants</h2>
-The effectiveness of the combatants in Vietnam was defined by their organizational structure and tactical roles.
-• ARVN (Republic of Vietnam): Faced the immense challenge of transitioning from a colonial auxiliary to a modern national army while simultaneously fighting an insurgency.
-• NVA/VC: Leveraged asymmetrical warfare, utilizing the terrain and a "protracted war" strategy to negate the technological advantages of allied forces.
+
 
 <h2 id="material">5. Material Realities: Weapons & Gear</h2>
-The effectiveness of the combatants in Vietnam was defined by their organizational structure and tactical roles.
+The Vietnam War was a testing ground for modern military technology, where firepower clashed with terrain. The introduction of the UH-1 Huey revolutionized air mobility, but the environment (jungle, monsoons) often rendered high-tech sensors and heavy armor ineffective, leading to a "technological stalemate."
+
 
 <h2 id="nuclear">6. The Nuclear Question</h2>
 Despite the frustrations of the conventional war, U.S. leaders never seriously engaged in nuclear use after 1954, constrained by a powerful “nuclear taboo.” This limitation meant that the U.S. had to find a way to win a "limited war," a task for which the technocratic model was ultimately ill-suited.
