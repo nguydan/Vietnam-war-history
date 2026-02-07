@@ -41,10 +41,10 @@ The effectiveness of the combatants in Vietnam was defined by their organization
 
 
 <h2 id="nuclear">6. The Nuclear Question</h2>
-Despite the frustrations of the conventional war, U.S. leaders never seriously engaged in nuclear use after 1954, constrained by a powerful "nuclear taboo"...
+Despite the frustrations of the conventional war, U.S. leaders never seriously engaged in nuclear use after 1954, constrained by a powerful “nuclear taboo.” This limitation meant that the U.S. had to find a way to win a "limited war," a task for which the technocratic model was ultimately ill-suited.
 
 <h2 id="conclusion">7. Conclusion</h2>
-The Vietnam War ended in 1975 with the collapse of the South Vietnamese state, demonstrating that overwhelming military power cannot always achieve political goals.
+The Vietnam War ended in 1975 with the collapse of the South Vietnamese state, demonstrating that overwhelming military power and data-driven management cannot always achieve political goals. The "Technocratic Tragedy" lies in the attempt to solve a complex human and political problem through purely mechanical and statistical means.
 
 <hr>
 <div style="text-align: center; margin-top: 20px;">
