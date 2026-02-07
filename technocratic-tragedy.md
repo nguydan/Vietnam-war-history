@@ -36,3 +36,8 @@ Despite the frustrations of the conventional war, U.S. leaders never seriously e
 
 <h2 id="conclusion">7. Conclusion</h2>
 The Vietnam War ended in 1975 with the collapse of the South Vietnamese state, demonstrating that overwhelming military power cannot always achieve political goals.
+
+<hr>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="#top" class="read-more-btn" style="background-color: #333; color: #fff;">↑ Back to Top / Trở lại đầu trang</a>
+</div>
