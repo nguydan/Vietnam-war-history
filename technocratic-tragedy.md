@@ -31,14 +31,11 @@ The effectiveness of the combatants in Vietnam was defined by their organization
 
 <h2 id="combatants">4. Comparative Analysis of Combatants</h2>
 The effectiveness of the combatants in Vietnam was defined by their organizational structure and tactical roles.
-
-
-<h2 id="material">5. Material Realities: Weapons & Gear</h2>
-The effectiveness of the combatants in Vietnam was defined by their organizational structure and tactical roles.
 • ARVN (Republic of Vietnam): Faced the immense challenge of transitioning from a colonial auxiliary to a modern national army while simultaneously fighting an insurgency.
 • NVA/VC: Leveraged asymmetrical warfare, utilizing the terrain and a "protracted war" strategy to negate the technological advantages of allied forces.
 
-
+<h2 id="material">5. Material Realities: Weapons & Gear</h2>
+The effectiveness of the combatants in Vietnam was defined by their organizational structure and tactical roles.
 
 <h2 id="nuclear">6. The Nuclear Question</h2>
 Despite the frustrations of the conventional war, U.S. leaders never seriously engaged in nuclear use after 1954, constrained by a powerful “nuclear taboo.” This limitation meant that the U.S. had to find a way to win a "limited war," a task for which the technocratic model was ultimately ill-suited.
