@@ -41,3 +41,5 @@ The Vietnam War ended in 1975 with the collapse of the South Vietnamese state, d
 <div style="text-align: center; margin-top: 20px;">
     <a href="#top" class="read-more-btn" style="background-color: #333; color: #fff;">↑ Back to Top / Trở lại đầu trang</a>
 </div>
+
+<div id="top"></div>
