@@ -1,52 +1,54 @@
-const toggle = document.getElementById("langToggle");
+const langToggle = document.getElementById('langToggle');
 
-const uiTranslations = {
-  en: { 
-    title: "Vietnam War History", 
+const translations = {
+  en: {
+    mainTitle: "Vietnam War History",
+    navAbout: "About",
+    navTimeline: "Timeline",
+    navSpecs: "Technical Specs",
     aboutTitle: "Preserving the Legacy",
-    aboutText: "This archive is dedicated to documenting the history of the Vietnam War...",
-    navAbout: "About", navTimeline: "Timeline",
-    btnAll: "All", btnBattles: "Battles", btnPolitics: "Politics", btnTech: "Technology"
+    btnAll: "All",
+    btnAnalysis: "Analysis",
+    btnBattles: "Battles",
+    btnPolitics: "Politics",
+    btnTech: "Technology"
   },
-  vi: { 
-    title: "Lịch Sử Chiến Tranh Việt Nam", 
+  vi: {
+    mainTitle: "Lịch Sử Chiến Tranh Việt Nam",
+    navAbout: "Giới Thiệu",
+    navTimeline: "Dòng Thời Gian",
+    navSpecs: "Thông Số Kỹ Thuật",
     aboutTitle: "Gìn Giữ Di Sản",
-    aboutText: "Kho lưu trữ này được dành riêng để ghi lại lịch sử Chiến tranh Việt Nam...",
-    navAbout: "Giới Thiệu", navTimeline: "Dòng Thời Gian",
-    btnAll: "Tất Cả", btnBattles: "Trận Đánh", btnPolitics: "Chính Trị", btnTech: "Kỹ Thuật"
+    btnAll: "Tất Cả",
+    btnAnalysis: "Phân Tích",
+    btnBattles: "Trận Đánh",
+    btnPolitics: "Chính Trị",
+    btnTech: "Công Nghệ"
   }
 };
 
-function setLanguage(lang) {
-  localStorage.setItem("lang", lang);
-  if (toggle) toggle.checked = (lang === "vi");
-
-  const elUpdate = (id, text) => {
+langToggle.addEventListener('change', () => {
+  const lang = langToggle.checked ? 'vi' : 'en';
+  
+  // Update elements by ID safely
+  const updateText = (id, text) => {
     const el = document.getElementById(id);
     if (el) el.textContent = text;
   };
 
-  elUpdate("main-title", uiTranslations[lang].title);
-  elUpdate("about-title", uiTranslations[lang].aboutTitle);
-  elUpdate("about-text", uiTranslations[lang].aboutText);
-  elUpdate("nav-about", uiTranslations[lang].navAbout);
-  elUpdate("nav-timeline", uiTranslations[lang].navTimeline);
-  elUpdate("btn-all", uiTranslations[lang].btnAll);
-  elUpdate("btn-battles", uiTranslations[lang].btnBattles);
-  elUpdate("btn-politics", uiTranslations[lang].btnPolitics);
-  elUpdate("btn-tech", uiTranslations[lang].btnTech);
+  updateText('main-title', translations[lang].mainTitle);
+  updateText('nav-about', translations[lang].navAbout);
+  updateText('nav-timeline', translations[lang].navTimeline);
+  updateText('nav-specs', translations[lang].navSpecs);
+  updateText('about-title', translations[lang].aboutTitle);
+  updateText('btn-all', translations[lang].btnAll);
+  updateText('btn-analysis', translations[lang].btnAnalysis);
+  updateText('btn-battles', translations[lang].btnBattles);
+  updateText('btn-politics', translations[lang].btnPolitics);
+  updateText('btn-tech', translations[lang].btnTech);
 
-  // Trigger the timeline redraw
+  // Re-run the timeline render to update cards
   if (window.renderTimeline) {
-    window.renderTimeline(lang);
+    window.renderTimeline();
   }
-}
-
-const savedLang = localStorage.getItem("lang") || "en";
-setLanguage(savedLang);
-
-if (toggle) {
-  toggle.addEventListener("change", () => {
-    setLanguage(toggle.checked ? "vi" : "en");
-  });
-}
+});
