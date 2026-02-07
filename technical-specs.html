@@ -6,49 +6,62 @@
   <title>Technical Specs | Vietnam War History</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .specs-container { max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
-    .spec-item { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
-    code { background: #f4f4f4; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
+    .specs-body { background-color: #f5f1e4; color: #333; } /* Matches timeline background */
+    .specs-container { max-width: 850px; margin: 40px auto; padding: 40px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .specs-header { border-bottom: 2px solid #4a5d23; margin-bottom: 30px; padding-bottom: 10px; color: #4a5d23; }
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+    .tech-card { padding: 20px; background: #fafafa; border-left: 4px solid #4a5d23; border-radius: 4px; }
+    .tech-card h3 { margin-top: 0; color: #4a5d23; font-size: 1.1rem; }
+    code { background: #eee; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9em; }
   </style>
 </head>
-<body>
+<body class="specs-body">
 
-<header>
-  <h1>Technical Specifications</h1>
+<header style="background-color: #4a5d23; padding: 20px; text-align: center;">
+  <h1 style="color: white; margin: 0;">Project Technical Stack</h1>
 </header>
 
-<nav id="navbar">
-  <a href="https://nguydan.github.io/Vietnam-war-history/" class="nav-link">← Back to Timeline</a>
+<nav id="navbar" style="text-align: center; padding: 15px;">
+  <a href="https://nguydan.github.io/Vietnam-war-history/" class="nav-link" style="color: #4a5d23; font-weight: bold; text-decoration: none;">← Back to Interactive Timeline</a>
 </nav>
 
 <main class="specs-container">
-  <section class="spec-item">
-    <h2>Project Overview</h2>
-    <p>This digital archive is a static web application built to document the strategic and technocratic history of the Vietnam War. It utilizes a custom-built JavaScript engine to render a bilingual timeline from a centralized data source.</p>
-  </section>
+  <h2 class="specs-header">Digital Archive Architecture</h2>
+  <p>This project is a bespoke digital humanities archive designed for educational accessibility and high-performance mobile browsing. It avoids heavy frameworks in favor of native web technologies.</p>
 
-  <section class="spec-item">
-    <h2>Core Technologies</h2>
-    <ul>
-      <li><strong>Frontend:</strong> HTML5, CSS3, and Vanilla JavaScript (No heavy frameworks for maximum performance).</li>
-      <li><strong>Data Storage:</strong> <code>events.json</code> serves as the primary database for timeline entries and video metadata.</li>
-      <li><strong>Hosting:</strong> GitHub Pages.</li>
-    </ul>
-  </section>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h3>Frontend Engine</h3>
+      <p>Built with <strong>Vanilla JavaScript</strong>. The <code>timeline.js</code> script dynamically fetches and renders data, while <code>toggle.js</code> handles the bilingual state management.</p>
+    </div>
+    <div class="tech-card">
+      <h3>Data Layer</h3>
+      <p>Uses a flat-file <strong>JSON database</strong> (<code>events.json</code>) to store archival metadata, allowing for easy updates and content expansion.</p>
+    </div>
+    <div class="tech-card">
+      <h3>Visual System</h3>
+      <p>Custom <strong>CSS3</strong> featuring a responsive grid layout. The color palette is inspired by military field manuals and archival documents.</p>
+    </div>
+    <div class="tech-card">
+      <h3>Media Hosting</h3>
+      <p>Archival footage is integrated via the <strong>YouTube IFrame API</strong>, optimized for mobile embedding with custom aspect-ratio containers.</p>
+    </div>
+  </div>
 
-  <section class="spec-item">
-    <h2>Dynamic Features</h2>
-    <ul>
-      <li><strong>Bilingual Toggle:</strong> A custom script (<code>toggle.js</code>) manages real-time switching between English and Vietnamese content.</li>
-      <li><strong>Video Integration:</strong> Leverages the YouTube IFrame API to embed archival footage directly into timeline cards.</li>
-      <li><strong>Filtering Logic:</strong> Event categories (Analysis, Battles, Politics, Technology) are handled via data-attribute filtering in <code>timeline.js</code>.</li>
-    </ul>
-  </section>
+  <h2 class="specs-header" style="margin-top: 40px;">Directory Structure</h2>
+  <pre style="background: #2d2d2d; color: #ccc; padding: 20px; border-radius: 6px; overflow-x: auto;">
+/Vietnam-war-history
+  ├── index.html              <span style="color: #888;"># Primary Interface</span>
+  ├── events.json             <span style="color: #888;"># Archival Data</span>
+  ├── style.css               <span style="color: #888;"># Design Tokens</span>
+  ├── timeline.js             <span style="color: #888;"># Rendering Engine</span>
+  ├── technical-specs.html    <span style="color: #888;"># Current Page</span>
+  └── technocratic-tragedy.md <span style="color: #888;"># Primary Research Report</span></pre>
 </main>
 
-<div style="text-align: center; margin-bottom: 50px;">
-    <a href="#top" class="read-more-btn" style="background-color: #333; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px;">↑ Back to Top</a>
-</div>
+<footer style="text-align: center; padding: 40px; color: #666;">
+  <p>Designed and Compiled by Nguydan &copy; 2026</p>
+</footer>
 
 </body>
 </html>
