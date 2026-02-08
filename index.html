@@ -6,55 +6,101 @@
   <title>Vietnam War History</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body id="top"> <header>
-  <h1 id="main-title">Vietnam War History</h1>
-  <div class="switch-container">
-    <span>EN</span>
-    <label class="switch">
-      <input type="checkbox" id="langToggle">
-      <span class="slider"></span>
-    </label>
-    <span>VI</span>
-  </div>
-</header>
-
-<nav id="navbar">
-  <a href="#about" class="nav-link" id="nav-about">About</a>
-  <a href="#timeline" class="nav-link" id="nav-timeline">Timeline</a>
-  <a href="https://nguydan.github.io/Vietnam-war-history/technical-specs.html" class="nav-link" id="nav-specs">Technical Specs</a>
-</nav>
-
-<section id="about">
-  <div class="container">
-    <h2 id="about-title">Preserving the Legacy</h2>
-    <p id="about-text">
-      This archive documents the Vietnam War's complexities, from its colonial roots to its technocratic conclusion...
+  <!-- ===== About / Intro ===== -->
+  <section id="about">
+    <h2>About the Vietnam War</h2>
+    <p>
+      The Vietnam War was not a single, isolated conflict but a layered struggle shaped by
+      colonialism, nationalism, Cold War ideology, and internal Vietnamese divisions.
+      What began as a fight for independence from French colonial rule gradually evolved
+      into one of the most complex and controversial wars of the twentieth century.
     </p>
-    <div class="orientation-summary">
-       <h3 id="eras-title">Key Eras:</h3>
-       <ul>
-         <li id="era-1"><strong>1945-1954:</strong> The Anti-French Resistance and the birth of the DRV.</li>
-         <li id="era-2"><strong>1954-1964:</strong> The Partition and the rise of the Republic of Vietnam.</li>
-         <li id="era-3"><strong>1965-1975:</strong> American Intervention and the limits of conventional power.</li>
-       </ul>
-    </div>
-  </div>
-</section>
 
-<div id="filter-container">
-  <button class="filter-btn active" data-type="all" id="btn-all">All</button>
-  <button class="filter-btn" data-type="analysis" id="btn-analysis">Analysis</button> 
-  <button class="filter-btn" data-type="battle" id="btn-battles">Battles</button>
-  <button class="filter-btn" data-type="political" id="btn-politics">Politics</button>
-  <button class="filter-btn" data-type="tech-weapons" id="btn-tech">Technology</button>
-</div>
+    <p>
+      For the Vietnamese people, the conflict spanned decades and involved competing visions
+      for the nation’s future. For the United States and its allies, Vietnam became a focal
+      point of global containment strategy against communism. These overlapping objectives
+      transformed a regional struggle into an international war with far-reaching political,
+      social, and human consequences.
+    </p>
+  </section>
 
-<main id="timeline">
-  </main>
-  
-<script src="timeline.js"></script>
-<script src="toggle.js"></script>
+  <!-- ===== Background & Origins (Pre-1945) ===== -->
+  <section id="background">
+    <h2>Background and Origins</h2>
+    <p>
+      The Vietnam War originated from decades of colonial rule, nationalist resistance,
+      and global power shifts following World War II. Vietnam had been part of French
+      Indochina since the late 19th century, where colonial authorities exploited land,
+      labor, and resources while suppressing political self-determination.
+    </p>
+    <p>
+      During World War II, Japan occupied Vietnam, weakening French control.
+      Vietnamese nationalist groups—most notably the Viet Minh, led by Hồ Chí Minh—
+      organized resistance movements. Hồ Chí Minh blended nationalism with communist
+      ideology, prioritizing independence over ideology in the early years.
+    </p>
+    <p>
+      In 1945, following Japan’s surrender, Hồ Chí Minh declared Vietnamese independence.
+      However, France attempted to reassert colonial authority, setting the stage for
+      armed conflict.
+    </p>
+  </section>
 
+  <!-- ===== Geneva Accords & Division (1954) ===== -->
+  <section id="geneva">
+    <h2>The Geneva Accords and Division of Vietnam</h2>
+    <p>
+      The 1954 Geneva Accords ended the First Indochina War after the French defeat at
+      Điện Biên Phủ. Vietnam was temporarily divided along the 17th parallel, with the
+      communist-led North and the Western-backed South.
+    </p>
+    <p>
+      This division was not intended to be permanent. Nationwide elections were scheduled
+      for 1956 to reunify the country. However, the South Vietnamese government—supported
+      by the United States—refused to participate, fearing a communist victory.
+    </p>
+    <p>
+      The United States did not sign the Geneva Accords, marking the beginning of deeper
+      American involvement in Vietnam’s internal conflict.
+    </p>
+  </section>
+
+  <!-- ===== Civilian Impact & Human Cost ===== -->
+  <section id="civilian-impact">
+    <h2>Civilian Impact and Human Cost</h2>
+    <p>
+      The Vietnam War inflicted immense suffering on civilians. Villages were displaced,
+      farmland was destroyed, and millions were forced to flee combat zones.
+    </p>
+    <p>
+      Chemical defoliants such as Agent Orange caused long-term environmental damage and
+      health effects that persist today. Unexploded ordnance continues to threaten lives
+      decades after the war’s end.
+    </p>
+    <p>
+      Estimates suggest that over two million Vietnamese civilians lost their lives,
+      making the war one of the most devastating conflicts of the 20th century.
+    </p>
+  </section>
+
+  <!-- ===== Timeline ===== -->
+  <section id="timeline">
+    <h2>Timeline of Key Events</h2>
+    <ul>
+      <li><strong>1945:</strong> Vietnam Declares Independence – Following Japan’s surrender, Hồ Chí Minh proclaimed independence. France attempted to reclaim control.</li>
+      <li><strong>1954:</strong> Battle of Điện Biên Phủ – French defeat leads to Geneva Accords and temporary division of Vietnam.</li>
+      <li><strong>1954–1963:</strong> South Vietnam Political Instability – Diệm’s government faced corruption, repression, and public unrest, ending with his assassination.</li>
+      <li><strong>1964:</strong> Gulf of Tonkin Incident – Alleged naval clashes led to U.S. Congress approving escalation of military involvement.</li>
+      <li><strong>1968:</strong> Tet Offensive – Coordinated North Vietnamese and Viet Cong attacks shocked U.S. public opinion despite military failure.</li>
+      <li><strong>1969–1973:</strong> Vietnamization and U.S. Withdrawal – U.S. troops gradually withdrew while South Vietnamese forces took over combat responsibilities.</li>
+      <li><strong>1975:</strong> Fall of Saigon – North Vietnamese forces captured Saigon, ending the war and reunifying Vietnam under communist rule.</li>
+    </ul>
+  </section>
+
+  <script src="timeline.js"></script>
+  <script src="toggle.js"></script>
 </body>
 </html>
