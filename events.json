@@ -22,11 +22,22 @@
     "video": "https://www.youtube.com/embed/StLAs7S-_cs"
   },
   {
-    "year": "1962",
+    "year": "1954–1963",
+    "type": "political",
+    "en": "South Vietnam faces political instability, religious repression, and corruption under Ngô Đình Diệm, culminating in his assassination in 1963.",
+    "vi": "Miền Nam Việt Nam đối mặt với bất ổn chính trị, đàn áp tôn giáo và tham nhũng dưới chế độ Ngô Đình Diệm, kết thúc bằng vụ ám sát ông năm 1963."
+  },
+  {
+    "year": "1964",
+    "type": "political",
+    "en": "Gulf of Tonkin Incident leads to U.S. escalation in Vietnam.",
+    "vi": "Sự kiện Vịnh Bắc Bộ dẫn đến việc leo thang can thiệp của Mỹ ở Việt Nam."
+  },
+  {
+    "year": "1965",
     "type": "tech-weapons",
-    "en": "The UH-1 Huey and the New Era of Air Mobility.",
-    "vi": "Trực thăng UH-1 Huey và Kỷ nguyên mới của Cơ động đường không.",
-    "video": "https://www.youtube.com/embed/gWXEGUctKXw"
+    "en": "U.S. combat troops arrive, introducing search-and-destroy missions and supporting ARVN forces.",
+    "vi": "Quân đội Mỹ tham chiến, triển khai các chiến dịch tìm-diệt và hỗ trợ lực lượng VNCH."
   },
   {
     "year": "1968",
@@ -43,10 +54,29 @@
     "video": "https://www.youtube.com/embed/DkkWTjMBGEw"
   },
   {
+    "year": "1969–1973",
+    "type": "political",
+    "en": "Vietnamization shifts combat to South Vietnamese forces while U.S. troops gradually withdraw.",
+    "vi": "Chiến lược Vietnamization chuyển giao chiến đấu cho lực lượng VNCH trong khi quân Mỹ rút dần."
+  },
+  {
+    "year": "1973",
+    "type": "political",
+    "en": "Paris Peace Accords formally end U.S. involvement, though fighting continues.",
+    "vi": "Hiệp định Paris chính thức kết thúc sự tham chiến của Mỹ, nhưng xung đột vẫn tiếp diễn."
+  },
+  {
     "year": "1975",
     "type": "political",
     "en": "The Fall of Saigon and the end of the conflict.",
     "vi": "Sài Gòn thất thủ và sự kết thúc của cuộc xung đột.",
     "video": "https://www.youtube.com/embed/Ssh8K_7Xp_g"
+  },
+  {
+    "year": "1962",
+    "type": "tech-weapons",
+    "en": "The UH-1 Huey and the New Era of Air Mobility.",
+    "vi": "Trực thăng UH-1 Huey và Kỷ nguyên mới của Cơ động đường không.",
+    "video": "https://www.youtube.com/embed/gWXEGUctKXw"
   }
 ]
