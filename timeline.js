@@ -1,82 +1,77 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const timeline = document.getElementById("timeline");
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  let allEvents = [];
-  let currentLang = document.getElementById("langToggle").checked ? "vi" : "en";
+// ===== timeline.js =====
 
-  // Fetch the events from your JSON file
-  fetch("events.json")
-    .then(response => response.json())
-    .then(data => {
-      allEvents = data;
-      renderTimeline(allEvents);
-    });
+// Load the events JSON dynamically
+fetch('events.json')
+  .then(response => response.json())
+  .then(events => buildTimeline(events))
+  .catch(error => console.error('Error loading events:', error));
 
-  // Function to build the timeline HTML
-  function renderTimeline(events) {
-    timeline.innerHTML = "";
-    events.forEach(event => {
-      const eventCard = document.createElement("div");
-      eventCard.className = `event-card ${event.type}`;
-      
-      // Determine content based on current language
-      const title = event[currentLang] || event.en;
-      
-      // Fixed Year Logic: Checks event.year first, then event.date, then defaults to "????"
-      const year = event.year || (event.date ? event.date.split("-")[0] : "????");
-      
-      let html = `
-        <div class="event-date">${year}</div>
-        <div class="event-content">
-          <p>${title}</p>
+function buildTimeline(events) {
+  const timelineContainer = document.getElementById('timeline');
+  if (!timelineContainer) return;
+
+  // Clear container
+  timelineContainer.innerHTML = '<h2>Timeline of Key Events</h2>';
+
+  events.forEach(event => {
+    // Create event card
+    const card = document.createElement('div');
+    card.classList.add('timeline-card');
+
+    // Year
+    const yearEl = document.createElement('h3');
+    yearEl.textContent = event.year;
+    card.appendChild(yearEl);
+
+    // Event text container
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('timeline-text');
+
+    // English + Vietnamese
+    const enText = document.createElement('p');
+    enText.classList.add('en');
+    enText.textContent = event.en;
+    textContainer.appendChild(enText);
+
+    const viText = document.createElement('p');
+    viText.classList.add('vi');
+    viText.textContent = event.vi || '';
+    textContainer.appendChild(viText);
+
+    card.appendChild(textContainer);
+
+    // Optional link
+    if (event.link) {
+      const linkEl = document.createElement('a');
+      linkEl.href = event.link;
+      linkEl.textContent = 'Read More';
+      linkEl.target = '_blank';
+      linkEl.classList.add('timeline-link');
+      card.appendChild(linkEl);
+    }
+
+    // Optional video
+    if (event.video) {
+      const videoContainer = document.createElement('div');
+      videoContainer.classList.add('timeline-video');
+      videoContainer.innerHTML = `
+        <iframe width="100%" height="315" src="${event.video}" 
+          title="YouTube video player" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen></iframe>
       `;
+      card.appendChild(videoContainer);
+    }
 
-      // MEDIA LOGIC: Check for Video first. If no video, check for Image.
-      if (event.video) {
-        html += `
-          <div class="video-container" style="margin-top:10px;">
-            <iframe width="100%" height="200" src="${event.video}" 
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
-          </div>`;
-      } else if (event.image) {
-        html += `<img src="${event.image}" alt="event image" style="width:100%; border-radius:8px; margin-top:10px;">`;
-      }
-
-      // BUTTON LOGIC: Adds the link if it exists in the JSON
-      if (event.link) {
-        html += `
-          <div style="margin-top: 15px;">
-            <a href="${event.link}" class="read-more-btn">Read Full Report / Xem Chi Tiết</a>
-          </div>
-        `;
-      }
-
-      html += `</div>`;
-      eventCard.innerHTML = html;
-      timeline.appendChild(eventCard);
-    });
-  }
-
-  // Language Toggle Logic
-  document.getElementById("langToggle").addEventListener("change", (e) => {
-    currentLang = e.target.checked ? "vi" : "en";
-    renderTimeline(allEvents);
+    // Append card to timeline container
+    timelineContainer.appendChild(card);
   });
+}
 
-  // Filtering Logic
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const type = btn.getAttribute("data-type");
-      
-      if (type === "all") {
-        renderTimeline(allEvents);
-      } else {
-        const filtered = allEvents.filter(e => e.type === type);
-        renderTimeline(filtered);
-      }
-    });
+// ===== Toggle EN/VI =====
+const toggleBtn = document.getElementById('lang-toggle');
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('vi-mode');
   });
-});
+}
