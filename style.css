@@ -1,15 +1,15 @@
+/* ===== Global Styles ===== */
 html {
   scroll-behavior: smooth;
 }
 
-/* Prevents sticky navbar from covering titles */
+/* Prevent sticky navbar from covering headings */
 section, main {
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
-/* --- Global Styles --- */
 body {
-  background-color: #f4ecd8; /* Parchment Color */
+  background-color: #f4ecd8; /* Parchment */
   margin: 0;
   padding: 0;
   font-family: 'Georgia', serif;
@@ -17,6 +17,7 @@ body {
   line-height: 1.6;
 }
 
+/* ===== Header ===== */
 header {
   background-color: #4b5320; /* Olive Drab */
   color: #f4ecd8;
@@ -25,46 +26,12 @@ header {
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.timeline-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px 0;
-  background: #f9f9f9;
+header h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
-.timeline-card h3 {
-  margin-top: 0;
-}
-
-.timeline-text p {
-  margin: 8px 0;
-}
-
-.timeline-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.timeline-link:hover {
-  text-decoration: underline;
-}
-
-.timeline-video {
-  margin-top: 15px;
-}
-
-body:not(.vi-mode) .vi {
-  display: none;
-}
-
-body.vi-mode .en {
-  display: none;
-}
-
-/* --- Navigation Bar --- */
+/* ===== Navbar ===== */
 #navbar {
   background: #3a4119;
   display: flex;
@@ -84,100 +51,102 @@ body.vi-mode .en {
   font-weight: bold;
 }
 
-/* --- About Section --- */
+.nav-link:hover,
+.nav-link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ===== About Section ===== */
 #about {
   background: #fff;
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
-  border-radius: 4px;
+  border-radius: 8px;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* --- Filter Buttons --- */
-#filter-container {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.filter-btn {
-  background: #f4ecd8;
-  border: 2px solid #4b5320;
-  color: #4b5320;
-  padding: 8px 16px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-
-.filter-btn.active, .filter-btn:hover {
-  background: #4b5320;
-  color: #f4ecd8;
-}
-
-/* --- Timeline & Cards --- */
-#timeline {
-  max-width: 800px;
-  margin: 0 auto 50px auto;
-  padding: 20px;
-}
-
-.event {
-  background: #ffffff;
+/* ===== Timeline Cards ===== */
+.timeline-card {
   border-left: 8px solid #4b5320;
-  margin-bottom: 30px;
+  border-radius: 8px;
   padding: 20px;
-  border-radius: 4px;
+  margin: 20px 0;
+  background: #f9f9f9;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.5s ease;
+  opacity: 0; /* For scroll animation */
+  transform: translateY(20px);
 }
 
-.event:hover {
-  transform: scale(1.01);
+.timeline-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+.timeline-card h3 {
+  margin-top: 0;
+}
+
+.timeline-text p {
+  margin: 8px 0;
+}
+
+.timeline-link,
+.read-more-btn {
+  display: inline-block;
+  background-color: #4b5320;
+  color: #f4ecd8 !important;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.timeline-link:hover,
+.read-more-btn:hover,
+.timeline-link:focus,
+.read-more-btn:focus {
+  background-color: #36441a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+/* ===== Videos ===== */
+.timeline-video,
 .video-container {
-  border: 2px solid #333;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   margin-top: 15px;
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%; /* 16:9 ratio */
   height: 0;
   overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+.timeline-video iframe,
 .video-container iframe {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* --- Modern Read Full Report Button --- */
-.read-more-btn {
-    display: inline-block;
-    background-color: #4a5d23;
-    color: #ffffff !important;
-    padding: 12px 24px;
-    margin-top: 20px;
-    border-radius: 30px; /* Pill shape */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: none;
-    cursor: pointer;
-}
+/* ===== Language Toggle ===== */
+body:not(.vi-mode) .vi { display: none; }
+body.vi-mode .en { display: none; }
 
-.read-more-btn:hover {
-    background-color: #36441a;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* --- Language Toggle --- */
 .switch-container {
   margin-top: 15px;
   display: flex;
@@ -215,12 +184,58 @@ body.vi-mode .en {
   border-radius: 50%;
 }
 
-#langToggle:checked + .slider { background-color: #4b5320 !important; }
+#langToggle:checked + .slider { background-color: #4b5320; }
 #langToggle:checked + .slider:before { transform: translateX(26px); }
 
-/* --- Mobile Fixes --- */
+/* ===== Filter Buttons ===== */
+#filter-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.filter-btn {
+  background: #f4ecd8;
+  border: 2px solid #4b5320;
+  color: #4b5320;
+  padding: 8px 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.filter-btn.active, 
+.filter-btn:hover, 
+.filter-btn:focus {
+  background: #4b5320;
+  color: #f4ecd8;
+  outline: none;
+}
+
+/* ===== Timeline Container ===== */
+#timeline {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  padding: 20px;
+}
+
+/* ===== Accessibility ===== */
+.nav-link:focus,
+.filter-btn:focus,
+.read-more-btn:focus {
+  outline: 2px dashed #4b5320;
+  outline-offset: 4px;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  header h1 { font-size: 1.8rem; }
+}
+
 @media (max-width: 600px) {
   header h1 { font-size: 1.4rem; }
-  .event { padding: 15px; }
-  .read-more-btn { width: 100%; text-align: center; }
+  .timeline-card { padding: 15px; margin: 15px 0; }
+  #timeline { padding: 10px; }
+  .read-more-btn, .timeline-link { width: 100%; text-align: center; }
+  .video-container, .timeline-video { padding-bottom: 40%; } /* smaller aspect ratio */
 }
