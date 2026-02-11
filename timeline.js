@@ -23,9 +23,15 @@ async function renderTimeline(filter = 'all') {
           <span class="year-badge">${event.year}</span>
           <h3 style="color: ${titleColor}">${event[lang]}</h3>
         </div>
+        // Ensure this part of your rendering logic uses the "video" field correctly
         ${event.video ? `
-          <div class="video-container">
-            <iframe src="${event.video}" frameborder="0" allowfullscreen></iframe>
+           <div class="video-container">
+              <iframe 
+                src="${event.video}" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
           </div>
         ` : ''}
         ${event.link ? `
