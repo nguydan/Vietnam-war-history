@@ -10,73 +10,96 @@
   {
     "year": "1945",
     "type": "political",
-    "en": "Ho Chi Minh declares Vietnam's independence.",
-    "vi": "Hồ Chí Minh tuyên bố độc lập của Việt Nam.",
+    "en": "Ho Chi Minh declares Vietnam's independence in Ba Dinh Square, Hanoi.",
+    "vi": "Hồ Chí Minh tuyên bố độc lập của Việt Nam tại Quảng trường Ba Đình, Hà Nội.",
     "video": "https://www.youtube.com/embed/ZbIsIUAzBcs"
   },
   {
     "year": "1954",
     "type": "battle",
-    "en": "The Fall of Dien Bien Phu: End of French Indochina",
-    "vi": "Sự sụp đổ của Điện Biên Phủ: Kết thúc Đông Dương thuộc Pháp",
+    "en": "The Fall of Dien Bien Phu ends French colonial rule in Indochina.",
+    "vi": "Sự sụp đổ của Điện Biên Phủ chấm dứt chế độ thuộc địa Pháp tại Đông Dương.",
     "video": "https://www.youtube.com/embed/StLAs7S-_cs"
+  },
+  {
+    "year": "1954",
+    "type": "political",
+    "en": "The Geneva Accords temporarily divide Vietnam at the 17th parallel.",
+    "vi": "Hiệp định Genève tạm thời chia Việt Nam tại vĩ tuyến 17."
   },
   {
     "year": "1954–1963",
     "type": "political",
-    "en": "South Vietnam faces political instability, religious repression, and corruption under Ngô Đình Diệm, culminating in his assassination in 1963.",
+    "en": "South Vietnam faces political instability, religious repression, and corruption under Ngo Dinh Diem, culminating in his assassination in 1963.",
     "vi": "Miền Nam Việt Nam đối mặt với bất ổn chính trị, đàn áp tôn giáo và tham nhũng dưới chế độ Ngô Đình Diệm, kết thúc bằng vụ ám sát ông năm 1963."
+  },
+  {
+    "year": "1962",
+    "type": "tech-weapons",
+    "en": "The UH-1 Huey ushers in a new era of air mobility and helicopter warfare.",
+    "vi": "Trực thăng UH-1 Huey mở ra kỷ nguyên mới của cơ động đường không và chiến tranh trực thăng.",
+    "video": "https://www.youtube.com/embed/gWXEGUctKXw"
+  },
+  {
+    "year": "1963",
+    "type": "political",
+    "en": "The Buddhist Crisis intensifies opposition to Ngo Dinh Diem's regime.",
+    "vi": "Khủng hoảng Phật giáo làm gia tăng phản đối chế độ Ngô Đình Diệm."
   },
   {
     "year": "1964",
     "type": "political",
-    "en": "Gulf of Tonkin Incident leads to U.S. escalation in Vietnam.",
-    "vi": "Sự kiện Vịnh Bắc Bộ dẫn đến việc leo thang can thiệp của Mỹ ở Việt Nam."
+    "en": "The Gulf of Tonkin Resolution grants President Johnson broad authority to expand U.S. military involvement.",
+    "vi": "Nghị quyết Vịnh Bắc Bộ trao cho Tổng thống Johnson quyền rộng rãi để mở rộng can thiệp quân sự của Mỹ."
   },
   {
     "year": "1965",
-    "type": "tech-weapons",
-    "en": "U.S. combat troops arrive, introducing search-and-destroy missions and supporting ARVN forces.",
-    "vi": "Quân đội Mỹ tham chiến, triển khai các chiến dịch tìm-diệt và hỗ trợ lực lượng VNCH."
+    "type": "battle",
+    "en": "U.S. combat troops arrive in Da Nang, marking the beginning of large-scale ground war.",
+    "vi": "Quân chiến đấu Mỹ đổ bộ vào Đà Nẵng, đánh dấu sự khởi đầu của chiến tranh trên bộ quy mô lớn."
   },
   {
     "year": "1968",
     "type": "battle",
-    "en": "ARVN Forces defending Saigon during the Tet Offensive.",
+    "en": "ARVN forces defend Saigon during the Tet Offensive.",
     "vi": "Quân lực VNCH phòng thủ Sài Gòn trong Tết Mậu Thân.",
     "video": "https://www.youtube.com/embed/GEstlzhY5_s"
   },
   {
     "year": "1968",
     "type": "battle",
-    "en": "The Tet Offensive: A Strategic Turning Point.",
-    "vi": "Cuộc Tổng tiến công Tết: Bước ngoặt chiến lược.",
-    "video": "https://www.youtube.com/embed/DkkWTjMBGEw"
+    "en": "The Tet Offensive becomes a strategic turning point in public opinion.",
+    "vi": "Cuộc Tổng tiến công Tết trở thành bước ngoặt chiến lược về mặt dư luận."
+  },
+  {
+    "year": "1968",
+    "type": "political",
+    "en": "The My Lai Massacre shocks the American public and fuels anti-war protests.",
+    "vi": "Thảm sát Mỹ Lai gây chấn động dư luận Mỹ và thúc đẩy phong trào phản chiến."
   },
   {
     "year": "1969–1973",
     "type": "political",
-    "en": "Vietnamization shifts combat to South Vietnamese forces while U.S. troops gradually withdraw.",
-    "vi": "Chiến lược Vietnamization chuyển giao chiến đấu cho lực lượng VNCH trong khi quân Mỹ rút dần."
+    "en": "Vietnamization shifts combat responsibility to South Vietnamese forces while U.S. troops gradually withdraw.",
+    "vi": "Chiến lược Vietnamization chuyển giao trách nhiệm chiến đấu cho lực lượng VNCH trong khi quân Mỹ rút dần."
+  },
+  {
+    "year": "1972",
+    "type": "battle",
+    "en": "The North Vietnamese Easter Offensive tests the success of Vietnamization.",
+    "vi": "Cuộc Tổng tấn công mùa Xuân 1972 thử thách hiệu quả của chiến lược Vietnamization."
   },
   {
     "year": "1973",
     "type": "political",
-    "en": "Paris Peace Accords formally end U.S. involvement, though fighting continues.",
-    "vi": "Hiệp định Paris chính thức kết thúc sự tham chiến của Mỹ, nhưng xung đột vẫn tiếp diễn."
+    "en": "The Paris Peace Accords formally end U.S. military involvement, though fighting continues.",
+    "vi": "Hiệp định Paris chính thức chấm dứt sự tham chiến của Mỹ, nhưng xung đột vẫn tiếp diễn."
   },
   {
     "year": "1975",
     "type": "political",
-    "en": "The Fall of Saigon and the end of the conflict.",
-    "vi": "Sài Gòn thất thủ và sự kết thúc của cuộc xung đột.",
+    "en": "The Fall of Saigon on April 30 marks the end of the Vietnam War.",
+    "vi": "Sài Gòn thất thủ ngày 30 tháng 4 đánh dấu sự kết thúc của Chiến tranh Việt Nam.",
     "video": "https://www.youtube.com/embed/Ssh8K_7Xp_g"
-  },
-  {
-    "year": "1962",
-    "type": "tech-weapons",
-    "en": "The UH-1 Huey and the New Era of Air Mobility.",
-    "vi": "Trực thăng UH-1 Huey và Kỷ nguyên mới của Cơ động đường không.",
-    "video": "https://www.youtube.com/embed/gWXEGUctKXw"
   }
 ]
