@@ -239,3 +239,13 @@ body.vi-mode .en { display: none; }
   .read-more-btn, .timeline-link { width: 100%; text-align: center; }
   .video-container, .timeline-video { padding-bottom: 40%; } /* smaller aspect ratio */
 }
+
+.back-to-top {
+  display: inline-block;
+  background-color: #4b5320;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
