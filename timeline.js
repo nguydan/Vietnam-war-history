@@ -1,77 +1,68 @@
-// ===== timeline.js =====
-
-// Load the events JSON dynamically
-fetch('events.json')
+fetch("events.json")
   .then(response => response.json())
-  .then(events => buildTimeline(events))
-  .catch(error => console.error('Error loading events:', error));
+  .then(data => {
 
-function buildTimeline(events) {
-  const timelineContainer = document.getElementById('timeline');
-  if (!timelineContainer) return;
+    const timeline = document.getElementById("timeline");
 
-  // Clear container
-  timelineContainer.innerHTML = '<h2>Timeline of Key Events</h2>';
+    // ===== SORT EVENTS BY YEAR =====
+    data.sort((a, b) => {
 
-  events.forEach(event => {
-    // Create event card
-    const card = document.createElement('div');
-    card.classList.add('timeline-card');
+      function getStartYear(yearString) {
+        // Extract first 4-digit number
+        const match = yearString.match(/\d{4}/);
+        return match ? parseInt(match[0]) : 0;
+      }
 
-    // Year
-    const yearEl = document.createElement('h3');
-    yearEl.textContent = event.year;
-    card.appendChild(yearEl);
+      return getStartYear(a.year) - getStartYear(b.year);
+    });
 
-    // Event text container
-    const textContainer = document.createElement('div');
-    textContainer.classList.add('timeline-text');
+    // ===== RENDER EVENTS =====
+    data.forEach(event => {
 
-    // English + Vietnamese
-    const enText = document.createElement('p');
-    enText.classList.add('en');
-    enText.textContent = event.en;
-    textContainer.appendChild(enText);
+      const card = document.createElement("div");
+      card.classList.add("event");
 
-    const viText = document.createElement('p');
-    viText.classList.add('vi');
-    viText.textContent = event.vi || '';
-    textContainer.appendChild(viText);
+      const year = document.createElement("h3");
+      year.textContent = event.year;
+      card.appendChild(year);
 
-    card.appendChild(textContainer);
+      const enText = document.createElement("p");
+      enText.classList.add("en");
+      enText.textContent = event.en;
+      card.appendChild(enText);
 
-    // Optional link
-    if (event.link) {
-      const linkEl = document.createElement('a');
-      linkEl.href = event.link;
-      linkEl.textContent = 'Read More';
-      linkEl.target = '_blank';
-      linkEl.classList.add('timeline-link');
-      card.appendChild(linkEl);
-    }
+      const viText = document.createElement("p");
+      viText.classList.add("vi");
+      viText.textContent = event.vi;
+      card.appendChild(viText);
 
-    // Optional video
-    if (event.video) {
-      const videoContainer = document.createElement('div');
-      videoContainer.classList.add('timeline-video');
-      videoContainer.innerHTML = `
-        <iframe width="100%" height="315" src="${event.video}" 
-          title="YouTube video player" frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen></iframe>
-      `;
-      card.appendChild(videoContainer);
-    }
+      if (event.video) {
+        const videoContainer = document.createElement("div");
+        videoContainer.classList.add("video-container");
 
-    // Append card to timeline container
-    timelineContainer.appendChild(card);
+        const iframe = document.createElement("iframe");
+        iframe.src = event.video;
+        iframe.allowFullscreen = true;
+
+        videoContainer.appendChild(iframe);
+        card.appendChild(videoContainer);
+      }
+
+      if (event.link) {
+        const readMoreBtn = document.createElement("a");
+        readMoreBtn.href = event.link;
+        readMoreBtn.target = "_blank";
+        readMoreBtn.classList.add("read-more-btn");
+
+        readMoreBtn.innerHTML = `
+          <span class="en">Read Full Report</span>
+          <span class="vi">Xem Báo Cáo Đầy Đủ</span>
+        `;
+
+        card.appendChild(readMoreBtn);
+      }
+
+      timeline.appendChild(card);
+    });
+
   });
-}
-
-// ===== Toggle EN/VI =====
-const toggleBtn = document.getElementById('lang-toggle');
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('vi-mode');
-  });
-}
