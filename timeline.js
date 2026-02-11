@@ -2,7 +2,7 @@ fetch("events.json")
   .then(response => response.json())
   .then(data => {
 
-    const timeline = document.getElementById("timeline");
+    const timeline = document.getElementById("timeline-container");
 
     // ===== SORT EVENTS BY YEAR =====
     data.sort((a, b) => {
