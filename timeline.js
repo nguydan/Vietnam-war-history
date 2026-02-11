@@ -1,68 +1,58 @@
-fetch("events.json")
-  .then(response => response.json())
-  .then(data => {
+async function renderTimeline(filter = 'all') {
+  const container = document.getElementById('timeline');
+  const lang = document.getElementById('langToggle').checked ? 'vi' : 'en';
+  
+  // 1. Fetch the data
+  const response = await fetch('events.json');
+  const data = await response.json();
+  
+  // 2. Clear current view
+  container.innerHTML = '';
 
-    const timeline = document.getElementById("timeline-container");
+  // 3. Filter and Render
+  data.forEach(event => {
+    if (filter === 'all' || event.type === filter) {
+      const card = document.createElement('div');
+      card.className = `event ${event.type}`;
+      
+      // Handle the "analysis" type specifically for styling if needed
+      const titleColor = event.type === 'analysis' ? '#2c3e50' : '#4b5320';
 
-    // ===== SORT EVENTS BY YEAR =====
-    data.sort((a, b) => {
-
-      function getStartYear(yearString) {
-        // Extract first 4-digit number
-        const match = yearString.match(/\d{4}/);
-        return match ? parseInt(match[0]) : 0;
-      }
-
-      return getStartYear(a.year) - getStartYear(b.year);
-    });
-
-    // ===== RENDER EVENTS =====
-    data.forEach(event => {
-
-      const card = document.createElement("div");
-      card.classList.add("event");
-
-      const year = document.createElement("h3");
-      year.textContent = event.year;
-      card.appendChild(year);
-
-      const enText = document.createElement("p");
-      enText.classList.add("en");
-      enText.textContent = event.en;
-      card.appendChild(enText);
-
-      const viText = document.createElement("p");
-      viText.classList.add("vi");
-      viText.textContent = event.vi;
-      card.appendChild(viText);
-
-      if (event.video) {
-        const videoContainer = document.createElement("div");
-        videoContainer.classList.add("video-container");
-
-        const iframe = document.createElement("iframe");
-        iframe.src = event.video;
-        iframe.allowFullscreen = true;
-
-        videoContainer.appendChild(iframe);
-        card.appendChild(videoContainer);
-      }
-
-      if (event.link) {
-        const readMoreBtn = document.createElement("a");
-        readMoreBtn.href = event.link;
-        readMoreBtn.target = "_blank";
-        readMoreBtn.classList.add("read-more-btn");
-
-        readMoreBtn.innerHTML = `
-          <span class="en">Read Full Report</span>
-          <span class="vi">Xem Báo Cáo Đầy Đủ</span>
-        `;
-
-        card.appendChild(readMoreBtn);
-      }
-
-      timeline.appendChild(card);
-    });
-
+      card.innerHTML = `
+        <div class="event-header">
+          <span class="year-badge">${event.year}</span>
+          <h3 style="color: ${titleColor}">${event[lang]}</h3>
+        </div>
+        ${event.video ? `
+          <div class="video-container">
+            <iframe src="${event.video}" frameborder="0" allowfullscreen></iframe>
+          </div>
+        ` : ''}
+        ${event.link ? `
+          <a href="${event.link}" class="read-more-btn">
+            ${lang === 'en' ? 'Read Full Report' : 'Xem Báo Cáo Chi Tiết'}
+          </a>
+        ` : ''}
+      `;
+      container.appendChild(card);
+    }
   });
+}
+
+// Initial load
+document.addEventListener('DOMContentLoaded', () => renderTimeline());
+
+// Attach to filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const type = e.target.getAttribute('data-type');
+    renderTimeline(type);
+    
+    // UI Update for active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+  });
+});
+
+// Make function global so toggle.js can call it
+window.renderTimeline = renderTimeline;
