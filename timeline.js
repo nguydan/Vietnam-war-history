@@ -1,5 +1,5 @@
 async function renderTimeline(filter = 'all') {
-  const container = document.getElementById('timeline');
+  const container = document.getElementById('timeline-container'); // Updated to match your HTML
   const lang = document.getElementById('langToggle').checked ? 'vi' : 'en';
   
   // 1. Fetch the data
@@ -15,7 +15,6 @@ async function renderTimeline(filter = 'all') {
       const card = document.createElement('div');
       card.className = `event ${event.type}`;
       
-      // Handle the "analysis" type specifically for styling if needed
       const titleColor = event.type === 'analysis' ? '#2c3e50' : '#4b5320';
 
       card.innerHTML = `
@@ -23,7 +22,6 @@ async function renderTimeline(filter = 'all') {
           <span class="year-badge">${event.year}</span>
           <h3 style="color: ${titleColor}">${event[lang]}</h3>
         </div>
-        // Ensure this part of your rendering logic uses the "video" field correctly
         ${event.video ? `
            <div class="video-container">
               <iframe 
@@ -54,11 +52,9 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     const type = e.target.getAttribute('data-type');
     renderTimeline(type);
     
-    // UI Update for active button
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     e.target.classList.add('active');
   });
 });
 
-// Make function global so toggle.js can call it
 window.renderTimeline = renderTimeline;
