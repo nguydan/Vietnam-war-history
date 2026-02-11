@@ -96,10 +96,10 @@
     "vi": "Hiệp định Paris chính thức chấm dứt sự tham chiến của Mỹ, nhưng xung đột vẫn tiếp diễn."
   },
   {
-    "year": "1975",
-    "type": "political",
-    "en": "The Fall of Saigon on April 30 marks the end of the Vietnam War.",
-    "vi": "Sài Gòn thất thủ ngày 30 tháng 4 đánh dấu sự kết thúc của Chiến tranh Việt Nam.",
-    "video": "https://www.youtube.com/embed/Ssh8K_7Xp_g"
+  "year": "1975",
+  "en": "The Fall of Saigon on April 30 marks the end of the Vietnam War.",
+  "vi": "Sự kiện 30 tháng 4 đánh dấu sự kết thúc của Chiến tranh Việt Nam.",
+  "type": "political",
+  "video": "https://www.youtube.com/embed/Ssh8K_7Xp_g"
   }
 ]
